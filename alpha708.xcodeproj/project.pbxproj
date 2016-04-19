@@ -15,6 +15,10 @@
 		63348C2A1CB4D0A700BC6AE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63348C281CB4D0A700BC6AE8 /* LaunchScreen.storyboard */; };
 		63348C351CB4D0A700BC6AE8 /* alpha708Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63348C341CB4D0A700BC6AE8 /* alpha708Tests.swift */; };
 		63348C401CB4D0A700BC6AE8 /* alpha708UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63348C3F1CB4D0A700BC6AE8 /* alpha708UITests.swift */; };
+		635037181CB4EE4A00CE0DA5 /* PFUser+Digits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635037171CB4EE4A00CE0DA5 /* PFUser+Digits.swift */; };
+		636F609C1CC4B2A40091C794 /* ColorsAndConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F609B1CC4B2A40091C794 /* ColorsAndConstants.swift */; };
+		636F60A01CC4C81E0091C794 /* AddExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F609F1CC4C81E0091C794 /* AddExpenseController.swift */; };
+		636F60A21CC552DA0091C794 /* ParityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F60A11CC552DA0091C794 /* ParityViewController.swift */; };
 		63D65AA91CB4D7AA002D546C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D65AA71CB4D7AA002D546C /* Bolts.framework */; };
 		63D65AAA1CB4D7AA002D546C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D65AA81CB4D7AA002D546C /* Parse.framework */; };
 		63D65AAC1CB4D7C0002D546C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D65AAB1CB4D7C0002D546C /* AudioToolbox.framework */; };
@@ -61,6 +65,10 @@
 		63348C3B1CB4D0A700BC6AE8 /* alpha708UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alpha708UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63348C3F1CB4D0A700BC6AE8 /* alpha708UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alpha708UITests.swift; sourceTree = "<group>"; };
 		63348C411CB4D0A700BC6AE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		635037171CB4EE4A00CE0DA5 /* PFUser+Digits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFUser+Digits.swift"; sourceTree = "<group>"; };
+		636F609B1CC4B2A40091C794 /* ColorsAndConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsAndConstants.swift; sourceTree = "<group>"; };
+		636F609F1CC4C81E0091C794 /* AddExpenseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseController.swift; sourceTree = "<group>"; };
+		636F60A11CC552DA0091C794 /* ParityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParityViewController.swift; sourceTree = "<group>"; };
 		63D65AA71CB4D7AA002D546C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		63D65AA81CB4D7AA002D546C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		63D65AAB1CB4D7C0002D546C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -160,9 +168,13 @@
 		63348C1E1CB4D0A700BC6AE8 /* alpha708 */ = {
 			isa = PBXGroup;
 			children = (
+				635037171CB4EE4A00CE0DA5 /* PFUser+Digits.swift */,
 				63348C1F1CB4D0A700BC6AE8 /* AppDelegate.swift */,
 				63348C211CB4D0A700BC6AE8 /* ViewController.swift */,
+				636F609F1CC4C81E0091C794 /* AddExpenseController.swift */,
 				63348C231CB4D0A700BC6AE8 /* Main.storyboard */,
+				636F60A11CC552DA0091C794 /* ParityViewController.swift */,
+				636F609B1CC4B2A40091C794 /* ColorsAndConstants.swift */,
 				63348C261CB4D0A700BC6AE8 /* Assets.xcassets */,
 				63348C281CB4D0A700BC6AE8 /* LaunchScreen.storyboard */,
 				63348C2B1CB4D0A700BC6AE8 /* Info.plist */,
@@ -393,8 +405,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635037181CB4EE4A00CE0DA5 /* PFUser+Digits.swift in Sources */,
+				636F609C1CC4B2A40091C794 /* ColorsAndConstants.swift in Sources */,
 				63348C221CB4D0A700BC6AE8 /* ViewController.swift in Sources */,
+				636F60A21CC552DA0091C794 /* ParityViewController.swift in Sources */,
 				63348C201CB4D0A700BC6AE8 /* AppDelegate.swift in Sources */,
+				636F60A01CC4C81E0091C794 /* AddExpenseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

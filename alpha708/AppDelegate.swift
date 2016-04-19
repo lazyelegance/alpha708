@@ -24,14 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
             // Initialize Parse.
         
-        Fabric.with([Crashlytics.self, Digits.self])
+
 
         
         
         let configuration = ParseClientConfiguration {
             $0.applicationId = "nljQEXoujtukiOKm1vz7cpifWpxfNzjbizjrXJoy"
             $0.clientKey = "jgexASKap9NgEvHdoXB4UuY6uDPUGc4vAZJMpBGV"
-            $0.server = "https://alpha708.herokuapp.com/parse"
+            $0.server = "https://gentle-fjord-12000.herokuapp.com/parse"
         }
         Parse.initializeWithConfiguration(configuration)
         return true

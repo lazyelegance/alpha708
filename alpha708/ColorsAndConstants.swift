@@ -46,11 +46,12 @@ public enum AddExpenseStep {
 }
 */
 
+
+
 public enum AddExpenseStep {
     case description
     case billAmount
     case parity
-    case someOtherThing
     case finish
 
     
@@ -62,8 +63,6 @@ public enum AddExpenseStep {
             return "Bill Amount"
         case parity:
             return "Parity"
-        case someOtherThing:
-            return "someOtherThing"
         case .finish:
             return "Finish"
         }
@@ -76,8 +75,6 @@ public enum AddExpenseStep {
         case .billAmount:
             return .parity
         case .parity:
-            return .someOtherThing
-        case .someOtherThing:
             return .finish
         case .finish:
             return self
@@ -92,8 +89,6 @@ public enum AddExpenseStep {
             return "BillAmount"
         case parity:
             return "parity"
-        case someOtherThing:
-            return "someOtherThing"
         case .finish:
             return "Finish"
         }

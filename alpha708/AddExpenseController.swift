@@ -20,9 +20,10 @@ class AddExpenseController: UIViewController, UITextFieldDelegate {
     
     var newExpense = PFObject(className: "Expense")
     
-    var descriptionTF = TextField()
-    var nextButton = FlatButton()
+    
 
+    @IBOutlet weak var descriptionTF: TextField!
+    @IBOutlet weak var nextButton: FlatButton!
     @IBOutlet weak var backButton: FlatButton!
     
     
@@ -35,7 +36,7 @@ class AddExpenseController: UIViewController, UITextFieldDelegate {
         
         
         print(newExpense)
-        descriptionTF = TextField(frame: CGRectMake(57, 150, 300, 24))
+        //descriptionTF = TextField(frame: CGRectMake(57, 150, 300, 24))
         descriptionTF.backgroundColor = peterrock
         descriptionTF.placeholder = currentStep.toString()
         descriptionTF.placeholderTextColor = peterrock_2
@@ -56,9 +57,9 @@ class AddExpenseController: UIViewController, UITextFieldDelegate {
         }
         
         
+        descriptionTF.becomeFirstResponder()
         
         
-        nextButton = FlatButton(frame: CGRectMake(viewWidth - 80 , 210, 60, 60))
         nextButton.backgroundColor = MaterialColor.white
         
         
@@ -76,7 +77,7 @@ class AddExpenseController: UIViewController, UITextFieldDelegate {
         
         nextButton.layer.cornerRadius = 30
         
-
+        nextButton.layer.shadowOpacity = 0.1
 
         nextButton.addTarget(self, action: #selector(AddExpenseController.toNextInAddExpenseCycle), forControlEvents: .TouchUpInside)
         
@@ -100,8 +101,8 @@ class AddExpenseController: UIViewController, UITextFieldDelegate {
         
         descriptionTF.clearButton = clearButton
 
-        view.addSubview(descriptionTF)
-        view.addSubview(nextButton)
+//        view.addSubview(descriptionTF)
+//        view.addSubview(nextButton)
         //view.addSubview(cancelButton)
 
 
@@ -146,14 +147,15 @@ class AddExpenseController: UIViewController, UITextFieldDelegate {
         self.descriptionTF.resignFirstResponder()
         
         if ((self.descriptionTF.text?.isEmpty) == false) {
-            self.newExpense[self.currentStep.mongoField()] = self.descriptionTF.text
             
-            if self.currentStep == .finish {
-                newExpense.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-                    print("Object has been saved.")
-                }
-                self.navigationController?.popToRootViewControllerAnimated(true)
-            } else if self.currentStep.nextStep() == .parity {
+            if currentStep == .billAmount {
+                self.newExpense[self.currentStep.mongoField()] = (self.descriptionTF.text! as NSString).floatValue
+            } else {
+                self.newExpense[self.currentStep.mongoField()] = self.descriptionTF.text
+            }
+            
+            
+            if self.currentStep.nextStep() == .parity {
                 if let parityVC = self.storyboard?.instantiateViewControllerWithIdentifier("ParityViewController") as? ParityViewController {
                     parityVC.currentStep = self.currentStep.nextStep()
                     parityVC.newExpense = self.newExpense

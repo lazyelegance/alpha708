@@ -18,6 +18,9 @@ class ParityViewController: UIViewController {
     
     var newExpense = PFObject(className: "Expense")
     
+    var parityText = "Shared Equally (1:1)"
+    
+    @IBOutlet weak var backButton: FlatButton!
     @IBOutlet weak var sharedEquallyLabel: UILabel!
     @IBOutlet weak var paidForOtherLabel: UILabel!
     @IBOutlet weak var paidForSelfLabel: UILabel!
@@ -32,16 +35,36 @@ class ParityViewController: UIViewController {
     @IBOutlet weak var nextButton: FlatButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(newExpense)
         view.backgroundColor = nephritis
+        
+        let username = PFUser.currentUser()?.username
+        
+        print(username)
         
         sharedEquallyLabel.text = "Shared Equally (1:1)"
         paidForOtherLabel.text = "Paid For Other (0:1)"
         paidForSelfLabel.text = "Paid For Self (1:0)"
         
+        if username == "ram" {
+            paidForOtherLabel.text = "Paid For Ezra (0:1)"
+        } else if username == "ezra" {
+            print(".......")
+            paidForOtherLabel.text = "Paid For Ram (0:1)"
+        }
+        
+        
+        
+        
         sharedEquallySwitch.on = true
         paidForOtherSwitch.on = false
         paidForSelfSwitch.on = false
         
+        
+        newExpense["ParityEzra"] = 1
+        newExpense["ParityRam"] = 1
+
         
         sharedEquallySwitch.addTarget(self, action: #selector(ParityViewController.switchAction(_:)), forControlEvents: UIControlEvents.ValueChanged)
         paidForOtherSwitch.addTarget(self, action: #selector(ParityViewController.switchAction(_:)), forControlEvents: UIControlEvents.ValueChanged)
@@ -64,8 +87,13 @@ class ParityViewController: UIViewController {
         nextButton.tintColor = MaterialColor.blue.accent3
         
         nextButton.layer.cornerRadius = 30
-        
+        nextButton.layer.shadowOpacity = 0.1
         nextButton.addTarget(self, action: #selector(AddExpenseController.toNextInAddExpenseCycle), forControlEvents: .TouchUpInside)
+        
+        
+        backButton.setTitle("BACK", forState: .Normal)
+        backButton.setTitleColor(MaterialColor.white, forState: .Normal)
+        backButton.titleLabel?.font = RobotoFont.regularWithSize(12)
         
         /*
         
@@ -95,12 +123,32 @@ class ParityViewController: UIViewController {
         case 100:
             paidForOtherSwitch.setOn(false, animated: true)
             paidForSelfSwitch.setOn(false, animated: true)
+            newExpense["ParityEzra"] = 1
+            newExpense["ParityRam"] = 1
+            parityText = sharedEquallyLabel.text!
         case 200:
             sharedEquallySwitch.setOn(false, animated: true)
             paidForSelfSwitch.setOn(false, animated: true)
+            parityText = paidForOtherLabel.text!
+            if PFUser.currentUser()?.username == "ezra" {
+                newExpense["ParityEzra"] = 0
+                newExpense["ParityRam"] = 1
+            } else {
+                newExpense["ParityEzra"] = 1
+                newExpense["ParityRam"] = 0
+            }
+            
         case 300:
             paidForOtherSwitch.setOn(false, animated: true)
             sharedEquallySwitch.setOn(false, animated: true)
+            parityText = paidForSelfLabel.text!
+            if PFUser.currentUser()?.username == "ezra" {
+                newExpense["ParityEzra"] = 1
+                newExpense["ParityRam"] = 0
+            } else {
+                newExpense["ParityEzra"] = 0
+                newExpense["ParityRam"] = 1
+            }
         default:
             break
         }
@@ -109,12 +157,18 @@ class ParityViewController: UIViewController {
     
     func toNextInAddExpenseCycle()  {
         //
-        if let addExpenseVC = self.storyboard?.instantiateViewControllerWithIdentifier("AddExpenseController") as? AddExpenseController {
-            addExpenseVC.currentStep = self.currentStep.nextStep()
-            addExpenseVC.newExpense = self.newExpense
-            self.navigationController?.pushViewController(addExpenseVC, animated: true)
+        if let finishVC = self.storyboard?.instantiateViewControllerWithIdentifier("FinishViewController") as? FinishViewController {
+            finishVC.parityText = self.parityText
+            finishVC.newExpense = self.newExpense
+            self.navigationController?.pushViewController(finishVC, animated: true)
         }
     }
+    
+    @IBAction func backOneStep(sender: AnyObject) {
+        
+        navigationController?.popViewControllerAnimated(true)
+    }
+
  
 
     /*

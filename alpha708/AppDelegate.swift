@@ -24,16 +24,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
             // Initialize Parse.
         
+        let filePath = NSBundle.mainBundle().pathForResource("keys", ofType: "plist")!
+        let keys = NSDictionary(contentsOfFile:filePath)
 
-
-        
-        
-        let configuration = ParseClientConfiguration {
-            $0.applicationId = "nljQEXoujtukiOKm1vz7cpifWpxfNzjbizjrXJoy"
-            $0.clientKey = "jgexASKap9NgEvHdoXB4UuY6uDPUGc4vAZJMpBGV"
-            $0.server = "https://gentle-fjord-12000.herokuapp.com/parse"
+        if let applicationId = keys?.objectForKey("applicationId") as? String, clientKey = keys?.objectForKey("clientKey") as? String, server = keys?.objectForKey("server") as? String {
+            let configuration = ParseClientConfiguration {
+                $0.applicationId = applicationId
+                $0.clientKey = clientKey
+                $0.server = server
+            }
+            Parse.initializeWithConfiguration(configuration)
         }
-        Parse.initializeWithConfiguration(configuration)
+        
+        
         return true
     }
 

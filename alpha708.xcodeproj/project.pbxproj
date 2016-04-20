@@ -15,6 +15,12 @@
 		63348C2A1CB4D0A700BC6AE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63348C281CB4D0A700BC6AE8 /* LaunchScreen.storyboard */; };
 		63348C351CB4D0A700BC6AE8 /* alpha708Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63348C341CB4D0A700BC6AE8 /* alpha708Tests.swift */; };
 		63348C401CB4D0A700BC6AE8 /* alpha708UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63348C3F1CB4D0A700BC6AE8 /* alpha708UITests.swift */; };
+		6350132B1CC629D00013A16F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350132A1CC629D00013A16F /* LoginViewController.swift */; };
+		6350132D1CC64ACF0013A16F /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350132C1CC64ACF0013A16F /* FinishViewController.swift */; };
+		635013311CC7728E0013A16F /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 635013301CC7728E0013A16F /* keys.plist */; };
+		635013331CC7B3700013A16F /* ListExpensesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635013321CC7B3700013A16F /* ListExpensesController.swift */; };
+		635013351CC7B4110013A16F /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635013341CC7B4110013A16F /* Expense.swift */; };
+		635013371CC7BC760013A16F /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635013361CC7BC760013A16F /* ExpenseCell.swift */; };
 		635037181CB4EE4A00CE0DA5 /* PFUser+Digits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635037171CB4EE4A00CE0DA5 /* PFUser+Digits.swift */; };
 		636F609C1CC4B2A40091C794 /* ColorsAndConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F609B1CC4B2A40091C794 /* ColorsAndConstants.swift */; };
 		636F60A01CC4C81E0091C794 /* AddExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F609F1CC4C81E0091C794 /* AddExpenseController.swift */; };
@@ -65,6 +71,12 @@
 		63348C3B1CB4D0A700BC6AE8 /* alpha708UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alpha708UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63348C3F1CB4D0A700BC6AE8 /* alpha708UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alpha708UITests.swift; sourceTree = "<group>"; };
 		63348C411CB4D0A700BC6AE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6350132A1CC629D00013A16F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6350132C1CC64ACF0013A16F /* FinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
+		635013301CC7728E0013A16F /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		635013321CC7B3700013A16F /* ListExpensesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListExpensesController.swift; sourceTree = "<group>"; };
+		635013341CC7B4110013A16F /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		635013361CC7BC760013A16F /* ExpenseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
 		635037171CB4EE4A00CE0DA5 /* PFUser+Digits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFUser+Digits.swift"; sourceTree = "<group>"; };
 		636F609B1CC4B2A40091C794 /* ColorsAndConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsAndConstants.swift; sourceTree = "<group>"; };
 		636F609F1CC4C81E0091C794 /* AddExpenseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseController.swift; sourceTree = "<group>"; };
@@ -171,13 +183,19 @@
 				635037171CB4EE4A00CE0DA5 /* PFUser+Digits.swift */,
 				63348C1F1CB4D0A700BC6AE8 /* AppDelegate.swift */,
 				63348C211CB4D0A700BC6AE8 /* ViewController.swift */,
+				635013341CC7B4110013A16F /* Expense.swift */,
 				636F609F1CC4C81E0091C794 /* AddExpenseController.swift */,
 				63348C231CB4D0A700BC6AE8 /* Main.storyboard */,
+				635013361CC7BC760013A16F /* ExpenseCell.swift */,
+				635013321CC7B3700013A16F /* ListExpensesController.swift */,
 				636F60A11CC552DA0091C794 /* ParityViewController.swift */,
+				6350132A1CC629D00013A16F /* LoginViewController.swift */,
+				6350132C1CC64ACF0013A16F /* FinishViewController.swift */,
 				636F609B1CC4B2A40091C794 /* ColorsAndConstants.swift */,
 				63348C261CB4D0A700BC6AE8 /* Assets.xcassets */,
 				63348C281CB4D0A700BC6AE8 /* LaunchScreen.storyboard */,
 				63348C2B1CB4D0A700BC6AE8 /* Info.plist */,
+				635013301CC7728E0013A16F /* keys.plist */,
 			);
 			path = alpha708;
 			sourceTree = "<group>";
@@ -317,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635013311CC7728E0013A16F /* keys.plist in Resources */,
 				63348C2A1CB4D0A700BC6AE8 /* LaunchScreen.storyboard in Resources */,
 				63348C271CB4D0A700BC6AE8 /* Assets.xcassets in Resources */,
 				63348C251CB4D0A700BC6AE8 /* Main.storyboard in Resources */,
@@ -405,11 +424,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6350132B1CC629D00013A16F /* LoginViewController.swift in Sources */,
 				635037181CB4EE4A00CE0DA5 /* PFUser+Digits.swift in Sources */,
 				636F609C1CC4B2A40091C794 /* ColorsAndConstants.swift in Sources */,
+				635013331CC7B3700013A16F /* ListExpensesController.swift in Sources */,
+				635013351CC7B4110013A16F /* Expense.swift in Sources */,
 				63348C221CB4D0A700BC6AE8 /* ViewController.swift in Sources */,
 				636F60A21CC552DA0091C794 /* ParityViewController.swift in Sources */,
+				6350132D1CC64ACF0013A16F /* FinishViewController.swift in Sources */,
 				63348C201CB4D0A700BC6AE8 /* AppDelegate.swift in Sources */,
+				635013371CC7BC760013A16F /* ExpenseCell.swift in Sources */,
 				636F60A01CC4C81E0091C794 /* AddExpenseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

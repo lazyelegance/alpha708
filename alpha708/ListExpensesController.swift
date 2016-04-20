@@ -64,7 +64,7 @@ class ListExpensesController: UITableViewController {
         
         
         if indexPath.row == self.expenses.count {
-            cell.textLabel?.text = "🚧🚧 work in progress 🚧🚧".uppercaseString
+            cell.textLabel?.text = "🚧🚧more soon🚧🚧".uppercaseString
         } else {
             if let expense = expenses[indexPath.row] as? Expense {
                 cell.textLabel?.text = "\(expense.description) -- $\(expense.billAmount)"

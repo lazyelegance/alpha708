@@ -50,7 +50,7 @@ class ListExpensesController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.expenses.count + 1
     }
 
     
@@ -61,16 +61,18 @@ class ListExpensesController: UITableViewController {
         cell.backgroundColor = UIColor.clearColor()
         cell.contentView.backgroundColor = UIColor.clearColor()
         
-        cell.textLabel?.text = "🚧🚧 work in progress 🚧🚧".uppercaseString
+        
+        
+        if indexPath.row == self.expenses.count {
+            cell.textLabel?.text = "🚧🚧 work in progress 🚧🚧".uppercaseString
+        } else {
+            if let expense = expenses[indexPath.row] as? Expense {
+                cell.textLabel?.text = "\(expense.description) -- $\(expense.billAmount)"
+            }
+        }
         cell.textLabel?.font = RobotoFont.mediumWithSize(13)
         cell.textLabel?.textColor = MaterialColor.white
         cell.textLabel?.textAlignment = .Center
-        
-//        if let expense = expenses[indexPath.row] as? Expense {
-//            cell.textLabel?.text = "\(expense.description) -- \(expense.billAmount)"
-//            cell.textLabel?.font = RobotoFont.mediumWithSize(13)
-//            cell.textLabel?.textColor = MaterialColor.white
-//        }
         // Configure the cell...
 
         return cell

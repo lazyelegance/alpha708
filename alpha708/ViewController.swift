@@ -214,6 +214,8 @@ class ViewController: UIViewController {
         
         if let userName = PFUser.currentUser()?.username as? String! {
             nameLabel.text = "hi, \(userName)"
+            
+            newExpense["AddedBy"] = userName
         } else {
             nameLabel.text = "hello"
         }

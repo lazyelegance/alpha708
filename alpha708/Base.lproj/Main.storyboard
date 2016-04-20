@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2881" y="277"/>
+            <point key="canvasLocation" x="3693" y="277"/>
         </scene>
         <!--List Expenses Controller-->
         <scene sceneID="uiE-YE-jqI">
@@ -170,7 +170,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEK-oZ-SC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3347" y="-353"/>
+            <point key="canvasLocation" x="4159" y="-353"/>
         </scene>
         <!--Add Expense Controller-->
         <scene sceneID="oqO-DW-wib">
@@ -257,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLv-3H-92i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3518" y="277"/>
+            <point key="canvasLocation" x="4330" y="277"/>
         </scene>
         <!--Finish View Controller-->
         <scene sceneID="Fvx-it-7gX">
@@ -316,8 +316,8 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="fHF-bP-lxp"/>
                                         <exclude reference="2wd-ET-gad"/>
+                                        <exclude reference="fHF-bP-lxp"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -352,8 +352,8 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="QRb-9v-WPD"/>
                                         <exclude reference="2xb-QJ-T2f"/>
+                                        <exclude reference="QRb-9v-WPD"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -455,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbf-CD-D2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4163" y="371"/>
+            <point key="canvasLocation" x="4975" y="371"/>
         </scene>
         <!--Parity View Controller-->
         <scene sceneID="Vfz-Rk-VYq">
@@ -595,13 +595,77 @@
                     <view key="view" contentMode="scaleToFill" id="mtT-Np-cxC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ul-9u-YvH" customClass="TextField" customModule="Material">
+                                <rect key="frame" x="50" y="224" width="500" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.3443200844" blue="0.27496013990000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="353" id="J4h-hN-ayY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="J4h-hN-ayY"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfG-N0-PaQ" customClass="FlatButton" customModule="Material">
+                                <rect key="frame" x="250" y="294" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="hTL-fy-9bV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XvI-8g-6Tj" customClass="TextField" customModule="Material">
+                                <rect key="frame" x="50" y="164" width="500" height="30"/>
+                                <color key="backgroundColor" red="0.75156276529999999" green="1" blue="0.9658395313" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="25W-5r-8rk"/>
+                                    <constraint firstAttribute="width" constant="300" id="8h6-H5-GB3"/>
+                                    <constraint firstAttribute="height" constant="30" id="HUg-GM-d9B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="25W-5r-8rk"/>
+                                        <exclude reference="8h6-H5-GB3"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XvI-8g-6Tj" firstAttribute="top" secondItem="Khi-8J-tMB" secondAttribute="bottom" constant="100" id="E88-UT-PxY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XvI-8g-6Tj" secondAttribute="trailing" constant="30" id="Iqi-sn-oTS"/>
+                            <constraint firstItem="3ul-9u-YvH" firstAttribute="height" secondItem="XvI-8g-6Tj" secondAttribute="height" id="LvX-oQ-Ylv"/>
+                            <constraint firstItem="BfG-N0-PaQ" firstAttribute="centerX" secondItem="mtT-Np-cxC" secondAttribute="centerX" id="cZp-JU-wWf"/>
+                            <constraint firstItem="3ul-9u-YvH" firstAttribute="top" secondItem="XvI-8g-6Tj" secondAttribute="bottom" constant="30" id="eW0-Nx-TKt"/>
+                            <constraint firstItem="3ul-9u-YvH" firstAttribute="trailing" secondItem="XvI-8g-6Tj" secondAttribute="trailing" id="guU-YO-QDk"/>
+                            <constraint firstItem="BfG-N0-PaQ" firstAttribute="top" secondItem="3ul-9u-YvH" secondAttribute="bottom" constant="40" id="hzr-6J-wDf"/>
+                            <constraint firstItem="3ul-9u-YvH" firstAttribute="centerX" secondItem="mtT-Np-cxC" secondAttribute="centerX" id="jdD-yf-SSo"/>
+                            <constraint firstItem="3ul-9u-YvH" firstAttribute="width" secondItem="XvI-8g-6Tj" secondAttribute="width" id="nXL-sL-0ss"/>
+                            <constraint firstItem="XvI-8g-6Tj" firstAttribute="centerX" secondItem="mtT-Np-cxC" secondAttribute="centerX" id="ss1-hw-niU"/>
+                            <constraint firstItem="3ul-9u-YvH" firstAttribute="leading" secondItem="XvI-8g-6Tj" secondAttribute="leading" id="tAY-KZ-Rez"/>
+                            <constraint firstItem="XvI-8g-6Tj" firstAttribute="leading" secondItem="mtT-Np-cxC" secondAttribute="leadingMargin" constant="30" id="teY-7H-1I8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ss1-hw-niU"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Cs1-DZ-9gy"/>
+                    <connections>
+                        <outlet property="loginButton" destination="BfG-N0-PaQ" id="j5X-eR-3N4"/>
+                        <outlet property="passwordLabel" destination="3ul-9u-YvH" id="TBq-q8-6eX"/>
+                        <outlet property="userNameLabel" destination="XvI-8g-6Tj" id="S3h-P6-rPb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJH-m6-TfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1523" y="-129"/>
+            <point key="canvasLocation" x="2335" y="-129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g5x-y0-7dn">
@@ -619,7 +683,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rlg-6g-deb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2069" y="277"/>
+            <point key="canvasLocation" x="2881" y="277"/>
         </scene>
     </scenes>
 </document>

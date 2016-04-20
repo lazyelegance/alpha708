@@ -15,24 +15,36 @@ import Material
 
 class LoginViewController: UIViewController, TextFieldDelegate {
     
-    var userNameLabel = TextField()
-    var passwordLabel = TextField()
+
     
-    var loginButton = FlatButton()
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var userNameLabel: TextField!
+    
+    @IBOutlet weak var passwordLabel: TextField!
+    
+    @IBOutlet weak var loginButton: FlatButton!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBarHidden = true
         
     
         view.backgroundColor = pomegranate_2
         
         let viewFrame = view.frame
         
+        view.backgroundColor = MaterialColor.teal.base
         
-        userNameLabel = TextField(frame: CGRectMake(viewFrame.origin.x + 30, viewFrame.origin.x + 120, viewFrame.size.width - 60, 20))
+
+        
+        
+
         userNameLabel.backgroundColor = UIColor.clearColor()
-        userNameLabel.placeholder = "Username".uppercaseString
-        userNameLabel.placeholderTextColor = peterrock_2
+        userNameLabel.placeholder = "Username".lowercaseString
+        userNameLabel.placeholderTextColor = MaterialColor.white
         userNameLabel.font = RobotoFont.regularWithSize(15)
         userNameLabel.textColor = MaterialColor.white
         userNameLabel.textAlignment = .Center
@@ -42,6 +54,9 @@ class LoginViewController: UIViewController, TextFieldDelegate {
         userNameLabel.titleLabelColor = MaterialColor.white
         userNameLabel.titleLabelActiveColor = MaterialColor.white
         
+        userNameLabel.bottomBorderColor = MaterialColor.white
+        
+        
         userNameLabel.delegate = self
         
         
@@ -49,17 +64,18 @@ class LoginViewController: UIViewController, TextFieldDelegate {
         userNameLabel.keyboardType = UIKeyboardType.EmailAddress
         userNameLabel.returnKeyType = .Next
         
-        view.addSubview(userNameLabel)
-        
-        passwordLabel = TextField(frame: CGRectMake(viewFrame.origin.x + 30, viewFrame.origin.x + 120 + 60, viewFrame.size.width - 60, 20))
+
+
         passwordLabel.backgroundColor = UIColor.clearColor()
-        passwordLabel.placeholder = "password".uppercaseString
-        passwordLabel.placeholderTextColor = peterrock_2
+        passwordLabel.placeholder = "password".lowercaseString
+        passwordLabel.placeholderTextColor = MaterialColor.white
         passwordLabel.font = RobotoFont.regularWithSize(15)
         passwordLabel.textColor = MaterialColor.white
         passwordLabel.textAlignment = .Center
         
         passwordLabel.delegate = self
+        
+        
         
         passwordLabel.titleLabel = UILabel()
         passwordLabel.titleLabel!.font = RobotoFont.mediumWithSize(10)
@@ -69,16 +85,16 @@ class LoginViewController: UIViewController, TextFieldDelegate {
         passwordLabel.secureTextEntry = true
         
         passwordLabel.returnKeyType = .Go
+        passwordLabel.bottomBorderColor = MaterialColor.white
+
         
-        view.addSubview(passwordLabel)
         
-        loginButton = FlatButton(frame: CGRectMake(viewFrame.origin.x + 80, viewFrame.origin.x + 120 + 60 + 60, viewFrame.size.width - 160, 40))
         loginButton.backgroundColor = MaterialColor.white
         
         
         loginButton.setTitle("LOGIN", forState: .Normal)
         
-        loginButton.setTitleColor(pomegranate_2, forState: .Normal)
+        loginButton.setTitleColor(MaterialColor.teal.darken1, forState: .Normal)
         loginButton.titleLabel?.font = RobotoFont.regularWithSize(10)
         loginButton.pulseColor = MaterialColor.blue.accent3
         loginButton.pulseScale = true
@@ -86,12 +102,9 @@ class LoginViewController: UIViewController, TextFieldDelegate {
         
         loginButton.addTarget(self, action: #selector(LoginViewController.loginAction), forControlEvents: .TouchUpInside)
         
+        
 //        loginButton.layer.cornerRadius = 30
 
-        
-        
-        
-        view.addSubview(loginButton)
         // Do any additional setup after loading the view.
     }
 
@@ -105,6 +118,8 @@ class LoginViewController: UIViewController, TextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if (textField == self.userNameLabel) {
+            self.passwordLabel.alpha = 1
+            self.loginButton.alpha = 1
             self.passwordLabel.becomeFirstResponder()
         } else if (textField == self.passwordLabel) {
             textField.resignFirstResponder()
@@ -118,8 +133,8 @@ class LoginViewController: UIViewController, TextFieldDelegate {
         self.userNameLabel.resignFirstResponder()
         self.passwordLabel.resignFirstResponder()
         
-        var username = self.userNameLabel.text
-        var password = self.passwordLabel.text
+        let username = self.userNameLabel.text
+        let password = self.passwordLabel.text
         
         // Validate the text fields
         

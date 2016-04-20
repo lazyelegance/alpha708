@@ -23,11 +23,7 @@ class LoginViewController: UIViewController, TextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-
-        
-        
+    
         view.backgroundColor = pomegranate_2
         
         let viewFrame = view.frame
@@ -105,10 +101,7 @@ class LoginViewController: UIViewController, TextFieldDelegate {
     }
     
     
-    override func viewWillAppear(animated: Bool) {
-        
-                
-    }
+
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if (textField == self.userNameLabel) {
@@ -146,8 +139,7 @@ class LoginViewController: UIViewController, TextFieldDelegate {
                     alert.show()
                     
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainViewController") as! ViewController
-                        self.presentViewController(viewController, animated: true, completion: nil)
+                        self.navigationController?.popToRootViewControllerAnimated(true)
                     })
                     
                 } else {

@@ -48,16 +48,7 @@ class ViewController: UIViewController {
     var owingRam: Float = 0.0
 
     @IBOutlet weak var mainBalance: UILabel!
-    @IBAction func login(sender: AnyObject) {
-        
-        PFUser.loginWithDigitsInBackground { (user, error) in
-            if ((error == nil)) {
-                print("SUCCESS")
-            } else {
-                print(error)
-            }
-        }
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,16 +67,8 @@ class ViewController: UIViewController {
 
         
         mainBalance.text = "\(mainBalanceAmount)$"
-        updateBackgroudColor()
-        
-        
-        
-        //addExpenseButton.addTarget(self, action: #selector(ViewController.toAddExpenseCycle), forControlEvents: .TouchUpInside)
+        //updateBackgroudColor()
 
-        
-        
-        
-        
         
         btn1.addTarget(self, action: #selector(ViewController.handleFlatMenu), forControlEvents: .TouchUpInside)
         btn1.setTitleColor(MaterialColor.blue.accent3, forState: .Normal)
@@ -94,6 +77,8 @@ class ViewController: UIViewController {
         btn1.pulseColor = MaterialColor.white
         btn1.setTitle("Menu".uppercaseString, forState: .Normal)
         view.addSubview(btn1)
+        
+        self.btn1.alpha = 0
         
         
         btn2.setTitleColor(MaterialColor.white, forState: .Normal)
@@ -159,13 +144,11 @@ class ViewController: UIViewController {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
             if error == nil {
-                // The find succeeded.
-                print("Successfully retrieved \(objects!.count) scores.")
-                // Do something with the found objects
+                
                 if let objects = objects {
                     self.expenses.removeAll()
                     for object in objects {
-//                        print(object.objectForKey("SettlementEzra"))
+
                         if let desc = object.objectForKey("Description") as? String, billAmount = object.objectForKey("BillAmount") as? Float, oE = object.objectForKey("OwingEzra") as? Float, oR = object.objectForKey("OwingRam") as? Float {
                             
                             var currExpense = Expense(desc: desc, billAmount: billAmount)
@@ -177,7 +160,7 @@ class ViewController: UIViewController {
                             
                             self.expenses.append(currExpense)
                             
-                            
+                            self.btn1.alpha = 1
                             
                             self.owingEzra = oE
                             self.owingRam = oR
@@ -188,7 +171,7 @@ class ViewController: UIViewController {
                             self.updateBackgroudColor()
                         }
                     }
-                    print(self.expenses)
+
                 }
             } else {
                 // Log details of the failure
@@ -267,6 +250,10 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
     
     
 

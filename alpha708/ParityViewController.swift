@@ -36,12 +36,11 @@ class ParityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(newExpense)
         view.backgroundColor = nephritis
         
         let username = PFUser.currentUser()?.username
         
-        print(username)
+
         
         sharedEquallyLabel.text = "Shared Equally (1:1)"
         paidForOtherLabel.text = "Paid For Other (0:1)"
@@ -50,7 +49,7 @@ class ParityViewController: UIViewController {
         if username == "ram" {
             paidForOtherLabel.text = "Paid For Ezra (0:1)"
         } else if username == "ezra" {
-            print(".......")
+
             paidForOtherLabel.text = "Paid For Ram (0:1)"
         }
         
@@ -116,8 +115,7 @@ class ParityViewController: UIViewController {
     
     
     func switchAction(sender: UISwitch) {
-        print(sender.on)
-        print(sender.tag)
+
         
         switch sender.tag {
         case 100:
@@ -169,6 +167,9 @@ class ParityViewController: UIViewController {
         navigationController?.popViewControllerAnimated(true)
     }
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
  
 
     /*

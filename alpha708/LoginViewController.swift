@@ -39,14 +39,10 @@ class LoginViewController: UIViewController, TextFieldDelegate {
         view.backgroundColor = MaterialColor.teal.base
         
 
-        headerView.backgroundColor = MaterialColor.teal.lighten1
-        
-        headerView.layer.cornerRadius = 5
-        
         
         
 
-        userNameLabel.backgroundColor = MaterialColor.clear
+        userNameLabel.backgroundColor = UIColor.clearColor()
         userNameLabel.placeholder = "Username".lowercaseString
         userNameLabel.placeholderTextColor = MaterialColor.white
         userNameLabel.font = RobotoFont.regularWithSize(15)
@@ -58,8 +54,8 @@ class LoginViewController: UIViewController, TextFieldDelegate {
         userNameLabel.titleLabelColor = MaterialColor.white
         userNameLabel.titleLabelActiveColor = MaterialColor.white
         
-        userNameLabel.bottomBorderColor = MaterialColor.teal.darken1
-        userNameLabel.layer.cornerRadius = 5
+        userNameLabel.bottomBorderColor = MaterialColor.white
+        
         
         userNameLabel.delegate = self
         
@@ -70,7 +66,7 @@ class LoginViewController: UIViewController, TextFieldDelegate {
         
 
 
-        passwordLabel.backgroundColor = MaterialColor.clear
+        passwordLabel.backgroundColor = UIColor.clearColor()
         passwordLabel.placeholder = "password".lowercaseString
         passwordLabel.placeholderTextColor = MaterialColor.white
         passwordLabel.font = RobotoFont.regularWithSize(15)
@@ -80,17 +76,17 @@ class LoginViewController: UIViewController, TextFieldDelegate {
         passwordLabel.delegate = self
         
         
-        passwordLabel.layer.cornerRadius = 5
+        
         passwordLabel.titleLabel = UILabel()
         passwordLabel.titleLabel!.font = RobotoFont.mediumWithSize(10)
         passwordLabel.titleLabelColor = MaterialColor.white
         passwordLabel.titleLabelActiveColor = MaterialColor.white
-        userNameLabel.bottomBorderColor = MaterialColor.teal.darken1
+        
         passwordLabel.secureTextEntry = true
         
         passwordLabel.returnKeyType = .Go
-        
-        passwordLabel.bottomBorderColor = MaterialColor.teal.darken1
+        passwordLabel.bottomBorderColor = MaterialColor.white
+
         
         
         loginButton.backgroundColor = MaterialColor.white
@@ -115,10 +111,6 @@ class LoginViewController: UIViewController, TextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        
     }
     
     
@@ -172,7 +164,7 @@ class LoginViewController: UIViewController, TextFieldDelegate {
             })
             
         } else {
-
+            print("incorrect email")
             userNameLabel.detailLabel = UILabel()
             userNameLabel.detailLabel!.text = "Email is incorrect."
             userNameLabel.detailLabel!.font = RobotoFont.regularWithSize(12)
@@ -219,7 +211,7 @@ class LoginViewController: UIViewController, TextFieldDelegate {
     }
     
     func isValidEmail(testStr:String) -> Bool {
-
+        print("validate calendar: \(testStr)")
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         
         if let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx) as? NSPredicate {
@@ -228,9 +220,7 @@ class LoginViewController: UIViewController, TextFieldDelegate {
         return false
     }
 
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
+    
     
     
     /*

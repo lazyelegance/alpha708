@@ -64,7 +64,7 @@ class ListExpensesController: UITableViewController {
         
         
         if indexPath.row == self.expenses.count {
-            cell.textLabel?.text = "🚧🚧 work in progress 🚧🚧".uppercaseString
+            cell.textLabel?.text = "🚧🚧more soon🚧🚧".uppercaseString
         } else {
             if let expense = expenses[indexPath.row] as? Expense {
                 cell.textLabel?.text = "\(expense.description) -- $\(expense.billAmount)"
@@ -123,9 +123,5 @@ class ListExpensesController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
 
 }

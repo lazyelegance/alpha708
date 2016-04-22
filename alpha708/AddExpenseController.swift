@@ -35,7 +35,7 @@ class AddExpenseController: UIViewController, UITextFieldDelegate {
         let viewWidth = view.frame.size.width
         
         
-
+        print(newExpense)
         //descriptionTF = TextField(frame: CGRectMake(57, 150, 300, 24))
         descriptionTF.backgroundColor = peterrock
         descriptionTF.placeholder = currentStep.toString()
@@ -178,9 +178,5 @@ class AddExpenseController: UIViewController, UITextFieldDelegate {
     @IBAction func backOneStep(sender: AnyObject) {
         
         navigationController?.popViewControllerAnimated(true)
-    }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
     }
 }

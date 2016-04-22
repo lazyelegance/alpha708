@@ -110,7 +110,7 @@ class FinishViewController: UIViewController {
     }
     
     func startOver() {
-
+        print("start Over")
         
         if ((self.navigationController?.viewControllers[1].isKindOfClass(AddExpenseController)) == true) {
             self.navigationController?.popToViewController((self.navigationController?.viewControllers[1])!, animated: true)
@@ -121,7 +121,7 @@ class FinishViewController: UIViewController {
 
     
     func saveExpense() {
-
+        print("boo")
         /*
          let testObject = PFObject(className: "Expense")
          testObject["Description"] = "As Of 18 Apr 2016"
@@ -181,16 +181,12 @@ class FinishViewController: UIViewController {
         newExpense["OwingEzra"] = owingEzra - (newExpense["SettlementEzra"] as! Float)
         newExpense["OwingRam"] = owingRam - (newExpense["SettlementRam"] as! Float)
         
-    
+        print(newExpense)
         
         newExpense.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-
+            print("Object has been saved.")
             self.navigationController?.popToRootViewControllerAnimated(true)
         }
-    }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
     }
 
 }

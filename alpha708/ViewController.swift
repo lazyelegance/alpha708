@@ -76,7 +76,7 @@ class ViewController: UIViewController {
 
         
         mainBalance.text = "\(mainBalanceAmount)$"
-        updateBackgroudColor()
+        //updateBackgroudColor()
         
         
         
